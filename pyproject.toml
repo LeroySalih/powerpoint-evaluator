@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pptx-eval"
+version = "0.1.0"
+description = "Check pupil PowerPoint work against a JSON requirements spec"
+requires-python = ">=3.10"
+dependencies = [
+  "lxml>=5",
+  "pydantic>=2.5",
+  "Pillow>=10",
+  "pypdf>=4",
+  "fastapi>=0.110",
+  "uvicorn>=0.27",
+  "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27", "python-pptx>=1.0"]
+
+[project.scripts]
+pptx-eval = "pptx_eval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

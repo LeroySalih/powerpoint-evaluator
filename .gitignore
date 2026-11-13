@@ -1,0 +1,9 @@
+__pycache__/
+*.egg-info/
+.venv/
+.pytest_cache/
+# Teacher-only and pupil-work material must never be committed (this repo is public).
+private/
+specs/**/assets/
+*.pptx
+*.pdf

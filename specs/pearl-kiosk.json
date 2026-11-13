@@ -1,0 +1,598 @@
+{
+ "spec_version": "0.1",
+ "id": "pearl-kiosk-6.2",
+ "title": "6.2 Presentation Assessment - Pearl Coast Aquarium (Section A)",
+ "assets": {
+  "BACKGROUND": {
+   "file": "pearl-kiosk/assets/BACKGROUND.png"
+  },
+  "LOGO": {
+   "file": "pearl-kiosk/assets/LOGO.png"
+  },
+  "TURTLE": {
+   "file": "pearl-kiosk/assets/TURTLE.jpg"
+  },
+  "MAP": {
+   "file": "pearl-kiosk/assets/MAP.png"
+  },
+  "JELLYFISH": {
+   "file": "pearl-kiosk/assets/JELLYFISH.jpg"
+  },
+  "CORAL": {
+   "file": "pearl-kiosk/assets/CORAL.jpg"
+  }
+ },
+ "sections": [
+  {
+   "id": "T1",
+   "title": "Task 1 Master slide",
+   "checks": [
+    {
+     "id": "1a",
+     "description": "Slide size 16:10 (and Slide Size screenshot at 1a)",
+     "marks": 1,
+     "type": "all_of",
+     "params": {
+      "checks": [
+       {
+        "type": "deck.slide_ratio",
+        "params": {
+         "ratio": 1.6
+        }
+       },
+       {
+        "type": "evidence.screenshot",
+        "params": {
+         "heading": "1a",
+         "expect": "Slide Size window showing 16:10"
+        }
+       }
+      ]
+     },
+     "tags": [
+      "LO1"
+     ]
+    },
+    {
+     "id": "1b",
+     "description": "BACKGROUND image on every slide at 60% transparency (55-65% accepted)",
+     "marks": 1,
+     "type": "master.background_image",
+     "params": {
+      "asset": "BACKGROUND",
+      "transparency_pct": [
+       55,
+       65
+      ]
+     },
+     "tags": [
+      "LO1"
+     ]
+    },
+    {
+     "id": "1c",
+     "description": "Dark blue title text with high contrast against the background",
+     "marks": 1,
+     "type": "master.title_style",
+     "params": {
+      "dark_blue": true,
+      "min_contrast": 4.5
+     },
+     "tags": [
+      "LO1"
+     ]
+    },
+    {
+     "id": "1d",
+     "description": "All slide titles bold and italic",
+     "marks": 1,
+     "type": "master.title_style",
+     "params": {
+      "bold": true,
+      "italic": true
+     },
+     "tags": [
+      "LO1"
+     ]
+    },
+    {
+     "id": "1e",
+     "description": "LOGO in the top right of every slide",
+     "marks": 1,
+     "type": "master.logo",
+     "params": {
+      "asset": "LOGO"
+     },
+     "tags": [
+      "LO1"
+     ]
+    },
+    {
+     "id": "1f",
+     "description": "Footer text centred, and an automatically updating date",
+     "marks": 1,
+     "type": "master.footer_text",
+     "params": {
+      "text": "Pearl Coast Aquarium – Visitor Information",
+      "slides": {
+       "all_except": [
+        1
+       ]
+      },
+      "date_slides": [
+       2,
+       4,
+       5
+      ]
+     },
+     "tags": [
+      "LO1"
+     ]
+    },
+    {
+     "id": "1g",
+     "description": "Slide number on the right; no footer or slide number on the title slide",
+     "marks": 1,
+     "type": "master.slide_number",
+     "params": {
+      "slides": {
+       "all_except": [
+        1
+       ]
+      },
+      "absent_on": [
+       1
+      ]
+     },
+     "tags": [
+      "LO1"
+     ]
+    },
+    {
+     "id": "1h",
+     "description": "Date hidden on the Two Content layout (slides 3 and 6), still shown on 2, 4, 5",
+     "marks": 1,
+     "type": "layout.placeholder_hidden",
+     "params": {
+      "layout": "Two Content",
+      "ph_type": "dt",
+      "shown_on_slides": [
+       2,
+       4,
+       5
+      ]
+     },
+     "tags": [
+      "LO1"
+     ]
+    },
+    {
+     "id": "1i",
+     "description": "Picture placeholder on the Title Only layout, used for the slide 2 image",
+     "marks": 1,
+     "type": "layout.placeholder_added",
+     "params": {
+      "layout": "Title Only",
+      "ph_type": "pic",
+      "slide": 2
+     },
+     "tags": [
+      "LO1"
+     ]
+    },
+    {
+     "id": "1j",
+     "description": "Screenshot of Slide Master view at 1j",
+     "marks": 1,
+     "type": "evidence.screenshot",
+     "params": {
+      "heading": "1j",
+      "expect": "Slide Master view showing master and layout masters, house style applied"
+     },
+     "tags": [
+      "LO1"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "T2",
+   "title": "Task 2 Slides",
+   "checks": [
+    {
+     "id": "2a",
+     "description": "Six slides use the stated layouts and the master",
+     "marks": 1,
+     "type": "slides.layouts",
+     "params": {
+      "layouts": [
+       "Title Slide",
+       "Title Only",
+       "Two Content",
+       "Title and Content",
+       "Title and Content",
+       "Two Content"
+      ]
+     },
+     "tags": [
+      "LO2"
+     ]
+    },
+    {
+     "id": "2b",
+     "description": "Short bullet points from PEARL TEXT on slides 3 and 4 (no whole paragraphs)",
+     "marks": 1,
+     "type": "slides.short_bullets",
+     "params": {
+      "slides": [
+       3,
+       4
+      ],
+      "max_words": 12,
+      "forbidden": [
+       "café",
+       "cafe",
+       "history"
+      ]
+     },
+     "tags": [
+      "LO2"
+     ]
+    },
+    {
+     "id": "2c",
+     "description": "TURTLE, JELLYFISH and a relevant image on slide 2; no CAMEL",
+     "marks": 1,
+     "type": "slides.images",
+     "params": {
+      "rules": [
+       {
+        "slide": 3,
+        "asset": "TURTLE"
+       },
+       {
+        "slide": 6,
+        "asset": "JELLYFISH"
+       }
+      ],
+      "relevant_on": {
+       "slide": 2,
+       "assets": [
+        "CORAL",
+        "TURTLE",
+        "SHARK",
+        "JELLYFISH"
+       ],
+       "require_placeholder": true
+      },
+      "forbidden_assets": [
+       "CAMEL"
+      ]
+     },
+     "tags": [
+      "LO2"
+     ]
+    },
+    {
+     "id": "2d",
+     "description": "Slide 5 shows the MAP instead of the directions paragraph",
+     "marks": 1,
+     "type": "slides.image_replaces_text",
+     "params": {
+      "slide": 5,
+      "asset": "MAP",
+      "max_words": 25
+     },
+     "tags": [
+      "LO2"
+     ]
+    },
+    {
+     "id": "2e",
+     "description": "TURTLE and JELLYFISH exactly 10 cm x 7.5 cm",
+     "marks": 1,
+     "type": "slides.image_size_cm",
+     "params": {
+      "items": [
+       {
+        "slide": 3,
+        "asset": "TURTLE",
+        "width_cm": 10,
+        "height_cm": 7.5
+       },
+       {
+        "slide": 6,
+        "asset": "JELLYFISH",
+        "width_cm": 10,
+        "height_cm": 7.5
+       }
+      ],
+      "tolerance_cm": 0.1
+     },
+     "tags": [
+      "LO2"
+     ]
+    },
+    {
+     "id": "2f",
+     "description": "Fit for purpose: readable, nothing overlapping or cut off, no stretched images",
+     "marks": 1,
+     "type": "slides.fit_for_purpose",
+     "params": {
+      "min_font_pt": 18
+     },
+     "tags": [
+      "LO2"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "T3",
+   "title": "Task 3 Animations and transitions",
+   "checks": [
+    {
+     "id": "3a",
+     "description": "Same entrance effect on each exhibit name only",
+     "marks": 1,
+     "type": "anim.same_entrance",
+     "params": {
+      "slide": 3,
+      "texts": [
+       "Turtle Cove",
+       "Shark Tunnel",
+       "Jellyfish Gallery"
+      ]
+     },
+     "tags": [
+      "LO3"
+     ]
+    },
+    {
+     "id": "3b",
+     "description": "Exhibit names appear in order, each After Previous",
+     "marks": 1,
+     "type": "anim.after_previous_in_order",
+     "params": {
+      "slide": 3,
+      "texts": [
+       "Turtle Cove",
+       "Shark Tunnel",
+       "Jellyfish Gallery"
+      ]
+     },
+     "tags": [
+      "LO3"
+     ]
+    },
+    {
+     "id": "3c",
+     "description": "Each exhibit animation lasts 2 seconds",
+     "marks": 1,
+     "type": "anim.duration",
+     "params": {
+      "slide": 3,
+      "duration_ms": 2000
+     },
+     "tags": [
+      "LO3"
+     ]
+    },
+    {
+     "id": "3d",
+     "description": "Slide 1 moves on after 5 s, not on mouse click",
+     "marks": 1,
+     "type": "transition.auto_advance",
+     "params": {
+      "slide": 1,
+      "after_ms": 5000
+     },
+     "tags": [
+      "LO3"
+     ]
+    },
+    {
+     "id": "3e",
+     "description": "Animation Pane and Transitions tab screenshots at 3e",
+     "marks": 1,
+     "type": "evidence.screenshot",
+     "params": {
+      "heading": "3e",
+      "expect": "Animation Pane for slide 3 AND Transitions tab for slide 1"
+     },
+     "tags": [
+      "LO3"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "T4",
+   "title": "Task 4 Hyperlinks and action buttons",
+   "checks": [
+    {
+     "id": "4a",
+     "description": "Our Exhibits links to slide 3",
+     "marks": 1,
+     "type": "links.slide_links",
+     "params": {
+      "slide": 2,
+      "items": [
+       {
+        "text": "Our Exhibits",
+        "target_slide": 3
+       }
+      ]
+     },
+     "tags": [
+      "LO4"
+     ]
+    },
+    {
+     "id": "4b",
+     "description": "Other three menu items link to slides 4, 5 and 6",
+     "marks": 1,
+     "type": "links.slide_links",
+     "params": {
+      "slide": 2,
+      "items": [
+       {
+        "text": "Opening Times and Tickets",
+        "target_slide": 4
+       },
+       {
+        "text": "Getting Here",
+        "target_slide": 5
+       },
+       {
+        "text": "Contact Us",
+        "target_slide": 6
+       }
+      ]
+     },
+     "tags": [
+      "LO4"
+     ]
+    },
+    {
+     "id": "4c",
+     "description": "Home action button on slides 3-6 linked to slide 2, same position",
+     "marks": 1,
+     "type": "links.home_button",
+     "params": {
+      "slides": [
+       3,
+       4,
+       5,
+       6
+      ],
+      "target_slide": 2,
+      "shape_prst": "actionButtonHome",
+      "same_position": true
+     },
+     "tags": [
+      "LO4"
+     ]
+    },
+    {
+     "id": "4d",
+     "description": "Action Settings screenshot at 4d",
+     "marks": 1,
+     "type": "evidence.screenshot",
+     "params": {
+      "heading": "4d",
+      "expect": "Action Settings window: Hyperlink to slide 2 (Menu)"
+     },
+     "tags": [
+      "LO4"
+     ]
+    },
+    {
+     "id": "4e",
+     "description": "Website and email hyperlinks on slide 6",
+     "marks": 1,
+     "type": "links.external",
+     "params": {
+      "slide": 6,
+      "targets": [
+       "http://www.pearlcoast.service",
+       "mailto:visit@pearlcoast.service"
+      ]
+     },
+     "tags": [
+      "LO4"
+     ]
+    },
+    {
+     "id": "4f",
+     "description": "'See all ticket prices' links to the TICKET PRICES file",
+     "marks": 1,
+     "type": "links.file",
+     "params": {
+      "slide": 4,
+      "text": "See all ticket prices",
+      "file_stem": "TICKET PRICES"
+     },
+     "tags": [
+      "LO4"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "T5",
+   "title": "Task 5 Speaker notes and printing",
+   "checks": [
+    {
+     "id": "5a",
+     "description": "Speaker notes from PEARL TEXT on slide 4",
+     "marks": 1,
+     "type": "notes.present",
+     "params": {
+      "slide": 4,
+      "min_words": 10
+     },
+     "tags": [
+      "LO5"
+     ]
+    },
+    {
+     "id": "5b",
+     "description": "Name and class in the Notes and Handouts footer",
+     "marks": 1,
+     "type": "print.name_class",
+     "params": {},
+     "tags": [
+      "LO5"
+     ]
+    },
+    {
+     "id": "5c",
+     "description": "HANDOUTS PDF: 3 slides per page, all six slides (2 pages)",
+     "marks": 1,
+     "type": "pdf.print",
+     "params": {
+      "file": "HANDOUTS",
+      "pages": 2,
+      "orientation": "portrait",
+      "slide_titles": "all"
+     },
+     "tags": [
+      "LO5"
+     ]
+    },
+    {
+     "id": "5d",
+     "description": "NOTES PDF: notes page for slide 4 only",
+     "marks": 1,
+     "type": "pdf.print",
+     "params": {
+      "file": "NOTES",
+      "pages": 1,
+      "orientation": "portrait",
+      "slide_title": 4,
+      "notes_of_slide": 4
+     },
+     "tags": [
+      "LO5"
+     ]
+    },
+    {
+     "id": "5e",
+     "description": "FULL PAGE PDF: slide 1 as one full page slide",
+     "marks": 1,
+     "type": "pdf.print",
+     "params": {
+      "file": "FULL PAGE",
+      "pages": 1,
+      "orientation": "landscape",
+      "slide_title": 1
+     },
+     "tags": [
+      "LO5"
+     ]
+    }
+   ]
+  }
+ ]
+}
